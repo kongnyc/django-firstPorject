@@ -13,10 +13,7 @@ class Room(models.Model):
     
 class Message(models.Model):
     user=models.ForeignKey(User, null=True, on_delete=DO_NOTHING)
-    username= models.CharField(max_length=20)
     time=models.DateField(auto_now_add=True)
     room=models.ForeignKey(Room, on_delete=CASCADE)
     text=models.CharField(max_length=500)
     
-    def __str__(self):
-        return self.username
