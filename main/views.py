@@ -9,7 +9,7 @@ from .models import Room, Message
 def index(response,roomid):
     room=Room.objects.get(id=roomid)
     # breakpoint()
-    return render(response, "main/base.html", {'name':room.name, 'date':print(room.date), 'description':room.description})
+    return render(response, "main/base.html", {'name':room.name, 'date':room.date, 'description':room.description})
 
 def home(response):
     return render(response, "main/home.html", {})

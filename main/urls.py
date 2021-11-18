@@ -5,8 +5,8 @@ from . import views
 
 urlpatterns = [
     # path('', views.index, name='index'),
+    path('', views.home, name='home'),
     path("<int:roomid>", views.index, name='index'),
-    path('home/', views.home, name='home'),
     path('__debug__/', include(debug_toolbar.urls)),
 
 ]
