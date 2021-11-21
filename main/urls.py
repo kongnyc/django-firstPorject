@@ -8,5 +8,9 @@ urlpatterns = [
     path('', views.home, name='home'),
     path("<int:roomid>", views.index, name='index'),
     path('__debug__/', include(debug_toolbar.urls)),
+    
+    path('register/',views.registerUser, name='register'),
+    path('login/', views.loginPage, name='login'),
+    
 
 ]

@@ -1,0 +1,17 @@
+<title>Register User Page</title>
+
+<body>
+    <section class="container">
+        <div class="register">
+            <h1>register new user</h1>
+
+            {% if form.errors %}
+            <p class="error"> Fail to login, try agian!</p>
+            {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" name="register" >
+            </form>
+        </div>
+</body>

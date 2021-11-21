@@ -3,9 +3,9 @@
     <title>{{name}} CHAT</title>
 </head>
 <body>
-    {% block homepage %}
+    
+{% block homepage %}
     <p>Base Template</p>
-{% endblock %}
     <div>
         {% block roomtitle %}
         <h1>Room name: {{name}}</h1>
@@ -14,7 +14,9 @@
     
     <p>description: {{description}}</p>
     <p>Room ceated at: {{date}}</p> 
-    <p> </p>
+{% endblock %}
+
+
 
 </body>
 </html>
