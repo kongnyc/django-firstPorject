@@ -4,8 +4,13 @@
 </head>
 <body>
     
-{% block homepage %}
-    <p>Base Template</p>
+{% block navBar %}
+<span class="hello-msg">Hello, {{request.user}}</span>
+  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+    <p>Base Template, NavBar</p>
+{% endblock %}
+
+{%block roominfo%}
     <div>
         {% block roomtitle %}
         <h1>Room name: {{name}}</h1>
