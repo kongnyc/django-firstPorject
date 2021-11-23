@@ -2,16 +2,12 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 from .models import Room, Message
 from django.contrib.auth.forms import UserCreationForm
+from .form import CreateUserForm
 
-
-# Create your views here.
-# def index(response):
-#     return HttpResponse("welcome to chat box")
 def registerUser(request):
-    form = UserCreationForm()
-    
+    form = CreateUserForm()
     if request.method =="POST":
-        form=UserCreationForm(request.POST)
+        form=CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
 
@@ -23,7 +19,6 @@ def loginPage(request):
 
 def index(response,roomid):
     room=Room.objects.get(id=roomid)
-    # breakpoint()
     return render(response, "main/base.html", {'name':room.name, 'date':room.date, 'description':room.description})
 
 def home(response):
